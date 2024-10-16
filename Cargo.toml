@@ -9,13 +9,35 @@ edition = "2021"
 members = [
     "node",
     "pallets/template",
+    "pallets/cdao_ballot",
+    "pallets/cdao_collective",
+    "pallets/cdao_membership",
+    "pallets/cdao_motions",
+    "pallets/cdao_decentralized_desion", 
+    "pallets/cdao_voting", 
+    "pallets/cdao_motions_exec",  
+    "pallets/cdao_society",
+    "pallets/cdao_alliance",  
     "runtime",
-]
+]  
+
 resolver = "2"
+ 
+[workspace.lints.rust]
+suspicious_double_ref_op = { level = "allow", priority = 2 }
 
 [workspace.dependencies]
 solochain-template-runtime = { path = "./runtime", default-features = false }
 pallet-template = { path = "./pallets/template", default-features = false }
+pallet-cdao-ballot = { path = "./pallets/cdao_ballot", default-features = false }
+pallet-cdao-collective = { path = "./pallets/cdao_collective", default-features = false }
+pallet-cdao-membership = { path = "./pallets/cdao_membership", default-features = false }
+pallet-cdao-motions = { path = "./pallets/cdao_motions", default-features = false }
+pallet-cdao-decentralized-desion = { path = "./pallets/cdao_decentralized_desion", default-features = false }
+pallet-cdao-voting = { path = "./pallets/cdao_voting", default-features = false }
+pallet-cdao-motions-exec = { path = "./pallets/cdao_motions_exec", default-features = false }
+pallet-cdao-society = { path = "./pallets/cdao_society", default-features = false }
+pallet-cdao-alliance = { path = "./pallets/cdao_alliance", default-features = false }
 clap = { version = "4.5.3" }
 frame-benchmarking-cli = { version = "42.0.0", default-features = false }
 frame-system = { version = "37.0.0", default-features = false }
