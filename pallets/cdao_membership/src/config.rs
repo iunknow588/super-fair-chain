@@ -7,17 +7,17 @@ use frame_support::pallet_macros::pallet_section;
 #[pallet_section]
 mod config {
     #[pallet::config]
-    pub trait Config: frame_system::Config {
+    pub trait Config: frame_system::Config  { 
         /// The overarching runtime event type.
-        type RuntimeEvent: From<Event<Self>> + IsType<<Self as frame_system::Config>::RuntimeEvent>;
-
+        type RuntimeEvent: From<Event<Self>> + IsType<<Self as frame_system::Config>::RuntimeEvent> ; 
         /// A type representing the weights required by the dispatchables of this pallet.
-        type WeightInfo: WeightInfo;
+        type WeightInfo: WeightInfo; 
+       // type MaxNameLength: Get<u32>  + TypeInfo;
+       // type MaxMemberships: Get<u32> + TypeInfo;  
 
-        /// A random value generator.
-        // type Randomness: Randomness<Self::Hash, BlockNumberFor<Self>>;
-
-        #[pallet::constant]
-        type MaxBidEntries: Get<u32>;
+       
+          #[pallet::constant]
+          type MaxNameLength: Get<u32> ;
+       // type MaxMemberships: Get<u32>;  
     }
 }

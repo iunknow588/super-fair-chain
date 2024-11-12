@@ -279,11 +279,12 @@ impl pallet_cdao_collective::Config for Runtime {
 }
 
 impl pallet_cdao_membership::Config for Runtime {
-    type RuntimeEvent = RuntimeEvent;
-    // type WeightInfo = pallet_kitties::weights::SubstrateWeight<Runtime>;
-    type WeightInfo = pallet_cdao_membership::weights::SubstrateWeight<Runtime>;
-    // type Randomness = Random;
-    type MaxBidEntries = ConstU32<3>;
+
+     type RuntimeEvent = RuntimeEvent;
+     type MaxNameLength = ConstU32<3>;
+    // type MaxMemberships = Self::MaxMemberships;  
+     type WeightInfo = pallet_cdao_membership::weights::SubstrateWeight<Runtime>;
+   // type MaxBidEntries = ConstU32<3>;
 }
 
 impl pallet_cdao_motions::Config for Runtime {

@@ -37,14 +37,17 @@ use core::marker::PhantomData;
 pub trait WeightInfo {
 	 fn do_something() -> Weight;
 	 fn cause_error() -> Weight; 
+	 fn add_membership( )-> Weight;
+	 fn update_membership() -> Weight; 
+	 fn remove_membership() -> Weight;  
+	 fn transfer_equity() -> Weight;   
 }
 
 /// Weights for pallet_template using the Substrate node and recommended hardware.
 pub struct SubstrateWeight<T>(PhantomData<T>);
 
 impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> 
-{
-	 
+{ 
 	fn do_something() -> Weight {
 		// Proof Size summary in bytes:
 		//  Measured:  `0`
@@ -65,6 +68,43 @@ impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T>
 			.saturating_add(RocksDbWeight::get().writes(1_u64))
 	}  
 	 
+	fn add_membership( )-> Weight {
+		// Proof Size summary in bytes:
+		//  Measured:  `32`
+		//  Estimated: `1489`
+		// Minimum execution time: 6_000_000 picoseconds.
+		Weight::from_parts(6_000_000, 1489)
+			.saturating_add(RocksDbWeight::get().reads(1_u64))
+			.saturating_add(RocksDbWeight::get().writes(1_u64))
+	}  
+	fn update_membership() -> Weight {
+		// Proof Size summary in bytes:
+		//  Measured:  `32`
+		//  Estimated: `1489`
+		// Minimum execution time: 6_000_000 picoseconds.
+		Weight::from_parts(6_000_000, 1489)
+			.saturating_add(RocksDbWeight::get().reads(1_u64))
+			.saturating_add(RocksDbWeight::get().writes(1_u64))
+	}   
+	fn remove_membership()-> Weight {
+		// Proof Size summary in bytes:
+		//  Measured:  `32`
+		//  Estimated: `1489`
+		// Minimum execution time: 6_000_000 picoseconds.
+		Weight::from_parts(6_000_000, 1489)
+			.saturating_add(RocksDbWeight::get().reads(1_u64))
+			.saturating_add(RocksDbWeight::get().writes(1_u64))
+	}  
+
+	fn transfer_equity()-> Weight {
+		// Proof Size summary in bytes:
+		//  Measured:  `32`
+		//  Estimated: `1489`
+		// Minimum execution time: 6_000_000 picoseconds.
+		Weight::from_parts(6_000_000, 1489)
+			.saturating_add(RocksDbWeight::get().reads(1_u64))
+			.saturating_add(RocksDbWeight::get().writes(1_u64))
+	}  
 }
   
 
@@ -91,6 +131,31 @@ impl WeightInfo for () {
 			.saturating_add(RocksDbWeight::get().reads(1_u64))
 			.saturating_add(RocksDbWeight::get().writes(1_u64))
 	}   
+	 
+	
+	fn add_membership( )-> Weight { 
+		Weight::from_parts(6_000_000, 1489)
+			.saturating_add(RocksDbWeight::get().reads(1_u64))
+			.saturating_add(RocksDbWeight::get().writes(1_u64))
+	} 
+ 
+	fn update_membership() -> Weight { 
+		Weight::from_parts(6_000_000, 1489)
+			.saturating_add(RocksDbWeight::get().reads(1_u64))
+			.saturating_add(RocksDbWeight::get().writes(1_u64))
+	} 
+
+	fn remove_membership() -> Weight { 
+		Weight::from_parts(6_000_000, 1489)
+			.saturating_add(RocksDbWeight::get().reads(1_u64))
+			.saturating_add(RocksDbWeight::get().writes(1_u64))
+	}   
+
+	fn transfer_equity() -> Weight { 
+		Weight::from_parts(6_000_000, 1489)
+			.saturating_add(RocksDbWeight::get().reads(1_u64))
+			.saturating_add(RocksDbWeight::get().writes(1_u64))
+	}  
 
 }
 

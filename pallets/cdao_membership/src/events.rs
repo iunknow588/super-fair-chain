@@ -1,17 +1,15 @@
-use frame_support::pallet_macros::pallet_section;
 /// Define all events used in the pallet.
-///
-///
+use frame_support::pallet_macros::pallet_section;
+ 
 #[pallet_section]
 mod events {
     #[pallet::event]
     #[pallet::generate_deposit(pub(super) fn deposit_event)]
-    pub enum Event<T: Config> {
-        example_e {
-            creator: T::AccountId,
-            index: u64,
-            data: [u8; 16],
-        },
+    pub enum Event<T: Config> {  
+        DaoMembershipAdded(T::AccountId, BoundedVec<u8, T::MaxNameLength>, T::AccountId, u32),
+        DaoMembershipUpdated(T::AccountId, BoundedVec<u8, T::MaxNameLength>, T::AccountId, u32),
+        DaoMembershipRemoved(T::AccountId, BoundedVec<u8, T::MaxNameLength>, T::AccountId),
+        DaoMembershipTransferEquity(T::AccountId, BoundedVec<u8, T::MaxNameLength>, T::AccountId,T::AccountId, u32), 
     }
 }
 

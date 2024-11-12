@@ -1,8 +1,8 @@
 use frame_support::pallet_macros::pallet_section;
 
 #[pallet_section]
-mod genesis {
-
+mod genesis {  
+  /*  
     #[pallet::genesis_config]
     pub struct GenesisConfig<T: Config> {
         pub genesis_kitty: KittyInfo,
@@ -24,4 +24,7 @@ mod genesis {
             //  KittyInfoList::<T>::insert(u32::MAX, self.genesis_kitty.clone());
         }
     }
+  
+  
+   */
 }
